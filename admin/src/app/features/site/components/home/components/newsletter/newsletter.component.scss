@@ -1,0 +1,24 @@
+.small-icon{
+    margin: 0 .25em;
+}
+h1 {
+    font-size: 22px;
+    font-family: 'poppins' !important;
+}
+.bottom{
+    margin-top: 5%;
+}
+table{
+    padding: 10px;
+}
+.last-column{
+    text-align: right;
+
+    mat-icon{
+        margin: 0 0.25em;
+    }
+
+    mat-icon:hover{
+        cursor: pointer;        
+    }
+}

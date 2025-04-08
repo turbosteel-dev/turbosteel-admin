@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./left-sidenav.component.scss']
 })
 export class LeftSidenavComponent {
-
+  menus = [
+    {
+      name: "Site",
+      path: "/site",
+      permission: "site",
+      icons: 'assets/images/icons/site.svg'
+    }
+  ];
 }

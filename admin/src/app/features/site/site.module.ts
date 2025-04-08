@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SiteRoutingModule } from './site-routing.module';
 import { SiteComponent } from './site.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { SiteComponent } from './site.component';
   ],
   imports: [
     CommonModule,
-    SiteRoutingModule
+    SiteRoutingModule,
+    SharedModule
   ]
 })
 export class SiteModule { }

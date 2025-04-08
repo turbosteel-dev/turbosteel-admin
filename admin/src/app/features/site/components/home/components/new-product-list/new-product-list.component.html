@@ -1,0 +1,62 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New Product List</h1>
+    </div>
+    <form [formGroup]="aboutUsListForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea  cols="4" matInput type="text" formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>URL</mat-label>
+                <input matInput type="text" formControlName="url">
+            </mat-form-field>
+        </div>
+
+        <h3>Lists</h3>
+        <div class="form-frids">
+          <div formArrayName="lists" *ngFor="let item of lists.controls; let i = index">
+            <div class="grid" [formGroupName]="i"> 
+              <mat-form-field class="flex-field">
+                <mat-label>List Description</mat-label>
+                <input matInput type="text" formControlName="list_description">
+              </mat-form-field>
+              <mat-icon (click)="OnDeleteLists(i)" title="delete" color="error" class="delete-icon">delete</mat-icon>
+            </div>
+          </div>
+        </div>
+  
+        <button type="button" (click)="onAddNewLists()" mat-stroked-button color="primary">Add Lists</button>
+  
+        <br>
+  
+
+        <div class="image-upload-container">
+            <label for="imageInput" class="upload-label">
+                <mat-icon>cloud_upload</mat-icon>
+                <span>Upload imageUrl</span>
+            </label>
+            <input type="file" id="imageInput" formControlName="imageUrl" (change)="onFileChange($event, 'imageUrl')"
+                #fileInput hidden />
+        </div>
+        <img *ngIf="imageUrlPreview" [src]="imageUrlPreview" alt="Image Preview" style="max-width: 200px; margin-top: 10px;">
+        <br><br>
+        <div *ngIf="companyListData?.imageUrl">
+            <h1>imageUrl image</h1>
+            <img src="{{companyListData?.imageUrl}}" />
+        </div>
+        <button class="customButton" mat-raised-button type="submit">Submit</button>
+    </form>
+
+</div>

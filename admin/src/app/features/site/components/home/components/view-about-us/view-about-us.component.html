@@ -1,0 +1,27 @@
+<div class="component-wrapper">
+    <h1>About Us</h1>
+
+    <div class="details" *ngIf="companyListData">
+        <div class="content">
+            <h2>Title</h2>
+            <p>{{companyListData.title}}</p>
+            <hr>
+        </div>
+        <div class="content">
+            <h2>Description</h2>
+            <p>{{companyListData.description}}</p>
+            <hr>
+        </div>
+        <div class="content" >
+            <h2>List Title and Description</h2>
+            <div *ngFor="let value of companyListData.lists">
+                <p>List Description: {{value.list_description}}</p>
+            </div>
+        </div>
+        <div class="content" *ngIf="companyListData.imageUrl">
+            <h2>Thummbnail</h2>
+            <img src="{{companyListData.imageUrl}}" alt=" Image">
+            <hr>
+        </div>
+    </div>
+</div>
