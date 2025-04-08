@@ -19,7 +19,7 @@ import { ViewVisionListComponent } from './components/view-vision-list/view-visi
     ViewVisionBannerComponent,
     VisionListComponent,
     NewVisionListComponent,
-    ViewVisionListComponent
+    ViewVisionListComponent,
   ],
   imports: [
     CommonModule,

@@ -12,8 +12,24 @@ const routes: Routes = [
     loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'about',
+    path: 'vision',
     loadChildren: () => import('./components/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: 'chairman',
+    loadChildren: () => import('./components/chairman/chairman.module').then(m => m.ChairmanModule)
+  },
+  {
+    path: 'erm',
+    loadChildren: () => import('./components/erm-overview/erm-overview.module').then(m => m.ErmOverviewModule)
+  },
+  {
+    path: 'csr',
+    loadChildren: () => import('./components/csr-activity/csr-activity.module').then(m => m.CsrActivityModule)
+  },
+  {
+    path: 'media',
+    loadChildren: () => import('./components/media/media.module').then(m => m.MediaModule)
   },
   {
     path: 'contact',

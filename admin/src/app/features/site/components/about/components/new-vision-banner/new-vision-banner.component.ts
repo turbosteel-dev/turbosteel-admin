@@ -95,7 +95,7 @@ export class NewVisionBannerComponent {
         this.httpService.post(this.bannerUrl, formData).subscribe(response => {
           this.snackBar.open('Banner added successfully', '', { duration: 3000 });
           this.bannerForm.reset();
-          this.router.navigate(['/site/about/vision-banner']);
+          this.router.navigate(['/site/vision/vision-banner']);
         },
           error => console.error('Error adding banner:', error)
         );
@@ -113,7 +113,7 @@ export class NewVisionBannerComponent {
       this.httpService.put(url, formData).subscribe(response => {
         this.responseData = response;
         this.snackBar.open('Banner updated successfully', '', { duration: 3000 });
-        this.router.navigate(['/site/about/vision-banner']);
+        this.router.navigate(['/site/vision/vision-banner']);
       }, error => {
         console.error('Error updating banner:', error);
       });
