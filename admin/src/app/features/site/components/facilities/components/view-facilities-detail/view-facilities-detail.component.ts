@@ -4,12 +4,12 @@ import { HttpService } from 'src/app/service/http.service';
 
 
 @Component({
-  selector: 'app-view-product-detail',
-  templateUrl: './view-product-detail.component.html',
-  styleUrls: ['./view-product-detail.component.scss']
+  selector: 'app-view-facilities-detail',
+  templateUrl: './view-facilities-detail.component.html',
+  styleUrls: ['./view-facilities-detail.component.scss']
 })
-export class ViewProductDetailComponent {
-  companyListUrl = '/api/product/productDetail';
+export class ViewFacilitiesDetailComponent {
+ companyListUrl = '/api/facilities/facilitiesDetail';
   companyListData: any;
   displayedColumns: string[] = ['title', 'description'];
 

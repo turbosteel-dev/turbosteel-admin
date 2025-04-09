@@ -1,0 +1,31 @@
+<div class="component-wrapper">
+    <h1>Chairman Details</h1>
+
+    <div class="details" *ngIf="companyListData">
+        <div class="content">
+            <h2>Title</h2>
+            <p>{{companyListData.title}}</p>
+            <hr>
+        </div>
+        <div class="content">
+            <h2>Facilities Url</h2>
+            <p>{{companyListData.facilities_url}}</p>
+            <hr>
+        </div>
+        <div class="content">
+            <h2>Description</h2>
+            <p>{{companyListData.description}}</p>
+            <hr>
+        </div>
+        <div class="content" *ngIf="companyListData.imageUrl">
+            <h2>Thummbnail One</h2>
+            <img src="{{companyListData.imageUrl}}" alt=" Image">
+            <hr>
+        </div>
+        <div class="content" *ngIf="companyListData.imageTwoUrl">
+            <h2>Thummbnail Two</h2>
+            <img src="{{companyListData.imageTwoUrl}}" alt=" Image">
+            <hr>
+        </div>
+    </div>
+</div>
