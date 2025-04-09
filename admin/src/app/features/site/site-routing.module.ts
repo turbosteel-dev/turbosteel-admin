@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./components/media/media.module').then(m => m.MediaModule)
   },
   {
+    path: 'product',
+    loadChildren: () => import('./components/products/products.module').then(m => m.ProductsModule)
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule)
   },

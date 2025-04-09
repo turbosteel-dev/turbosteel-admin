@@ -6,14 +6,14 @@ import { HttpService } from 'src/app/service/http.service';
 
 
 @Component({
-  selector: 'app-new-chairman-detail',
-  templateUrl: './new-chairman-detail.component.html',
-  styleUrls: ['./new-chairman-detail.component.scss']
+  selector: 'app-new-product-detail',
+  templateUrl: './new-product-detail.component.html',
+  styleUrls: ['./new-product-detail.component.scss']
 })
-export class NewChairmanDetailComponent {
+export class NewProductDetailComponent {
   aboutUsListForm!: FormGroup;
   isEdit = false;
-  aboutUsUrl = '/api/chairman/chairmanDetail'
+  aboutUsUrl = '/api/product/productDetail'
   companyListCategoryData: any;
   companyListUpdatedUrl: any;
   companyListData: any;
@@ -21,6 +21,8 @@ export class NewChairmanDetailComponent {
   imageUrlFile: File | null = null;
   imageUrlPreview: File | null = null;
   apiKey = 'jknbmygtcl8r8k97i0fgw049crqz2gmwzvtzoo3j3duwy1vh';
+  categoryData: any;
+  categoryUrl = '/api/home/homeProductList'
 
   constructor(private activatedroute: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpService,
     private router: Router,
@@ -28,6 +30,7 @@ export class NewChairmanDetailComponent {
 
   ngOnInit() {
     this.buildForm();
+    this.loadData();
     this.activatedroute.paramMap.subscribe(params => {
       if (params.get('id')) {
         this.isEdit = true;
@@ -47,17 +50,17 @@ export class NewChairmanDetailComponent {
       const input = document.createElement('input');
       input.setAttribute('type', 'file');
       input.setAttribute('accept', 'image/*');
-  
+
       input.addEventListener('change', (event: any) => {
         const file = event.target.files[0];
         const reader = new FileReader();
-  
+
         reader.onload = () => {
           callback(reader.result as string, { title: file.name });
         };
         reader.readAsDataURL(file);
       });
-  
+
       input.click();
     }
   };
@@ -65,9 +68,17 @@ export class NewChairmanDetailComponent {
   buildForm() {
     this.aboutUsListForm = this.formBuilder.group({
       imageUrl: [''],
+      productUrlId: [''],
+      headerDescription: [''],
       title: ['', Validators.required],
       description: [''],
     })
+  }
+
+  loadData() {
+    this.http.get(this.categoryUrl).subscribe(response => {
+      this.categoryData = response;
+    });
   }
 
   loadcompanyLists(id: any) {
@@ -83,6 +94,8 @@ export class NewChairmanDetailComponent {
   prePopulateForm() {
     this.aboutUsListForm.patchValue({
       title: this.companyListData.title,
+      productUrlId: this.companyListData.productUrlId,
+      headerDescription: this.companyListData.headerDescription,
       description: this.companyListData.description,
       imageUrl: this.companyListData.imageUrl,
     });
@@ -101,8 +114,8 @@ export class NewChairmanDetailComponent {
         case 'imageUrl':
           this.imageUrlFile = file;
           const reader = new FileReader();
-          reader.onload = (e:any) =>{
-           this.imageUrlPreview = e.target.result;
+          reader.onload = (e: any) => {
+            this.imageUrlPreview = e.target.result;
           }
           reader.readAsDataURL(file);
           break;
@@ -119,13 +132,15 @@ export class NewChairmanDetailComponent {
         if (this.imageUrlFile) {
           formData.append('imageUrl', this.imageUrlFile);
         }
+        formData.append('productUrlId', this.aboutUsListForm.get('productUrlId')?.value);
+        formData.append('headerDescription', this.aboutUsListForm.get('headerDescription')?.value);
         formData.append('title', this.aboutUsListForm.get('title')?.value);
         formData.append('description', this.aboutUsListForm.get('description')?.value);
         this.http.post(this.aboutUsUrl, formData).subscribe(response => {
           console.log('data updated successfully:', response);
           this.snackBar.open('data updated successfully', '', { duration: 3000 });
           this.aboutUsListForm.reset();
-          this.router.navigate(['/site/chairman/chairman-detail'])
+          this.router.navigate(['/site/product/product-detail'])
         });
       }
     }
@@ -135,12 +150,13 @@ export class NewChairmanDetailComponent {
       if (this.imageUrlFile) {
         formData.append('imageUrl', this.imageUrlFile);
       }
-
+      formData.append('productUrlId', this.aboutUsListForm.get('productUrlId')?.value);
+      formData.append('headerDescription', this.aboutUsListForm.get('headerDescription')?.value);
       formData.append('title', this.aboutUsListForm.get('title')?.value);
       formData.append('description', this.aboutUsListForm.get('description')?.value);
       this.http.put(this.companyListUpdatedUrl, formData).subscribe(response => {
         this.responseData = response;
-        this.router.navigate(['/site/chairman/chairman-detail'])
+        this.router.navigate(['/site/product/product-detail'])
         this.snackBar.open('Data updated successfully', '', { duration: 3000 });
       }, error => {
         console.error('Error updating data:', error);
@@ -148,4 +164,5 @@ export class NewChairmanDetailComponent {
     }
   }
 }
+
 

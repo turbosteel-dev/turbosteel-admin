@@ -1,0 +1,47 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New Product Banner</h1>
+    </div>
+    <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Select product-banner</mat-label>
+                <mat-select formControlName="productUrlId">
+                    <mat-option *ngFor="let option of categoryData" [value]="option.url">
+                        {{ option.url }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput type="text" formControlName="description">
+            </mat-form-field>
+        </div>
+        <div class="image-upload-container">
+            <label for="imageInput" class="upload-label">
+                <mat-icon>cloud_upload</mat-icon>
+                <span>Upload Image</span>
+            </label>
+            <input type="file" id="imageInput" formControlName="imageUrl" (change)="onFileChange($event, 'imageUrl')" #fileInput
+            hidden>
+    </div>
+    <img *ngIf="imageUrlPreview" [src]="imageUrlPreview" alt="Image Preview" style="max-height: 200px; ">
+
+        <div *ngIf="bannerData?.imageUrl; else noImage">
+            <img class="image-preview" src="{{bannerData.imageUrl}}" alt=" Image">
+          </div>
+          <ng-template #noImage>
+            <p>No image available</p>
+          </ng-template>
+        <button class="customButton" type="submit" mat-raised-button>Submit</button>
+    </form>
+
+</div>

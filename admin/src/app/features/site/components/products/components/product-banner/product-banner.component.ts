@@ -4,13 +4,13 @@ import { HttpService } from 'src/app/service/http.service';
 
 
 @Component({
-  selector: 'app-media-banner',
-  templateUrl: './media-banner.component.html',
-  styleUrls: ['./media-banner.component.scss']
+  selector: 'app-product-banner',
+  templateUrl: './product-banner.component.html',
+  styleUrls: ['./product-banner.component.scss']
 })
-export class MediaBannerComponent {
-  banner: any[] = [];
-  bannerUrl = '/api/media/mediaBanner'
+export class ProductBannerComponent {
+ banner: any[] = [];
+  bannerUrl = '/api/product/productBanner'
   displayedColumns: string[] = ['title','action'];
   responseData:any;
 
