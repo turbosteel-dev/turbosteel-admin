@@ -1,0 +1,35 @@
+<div class="component-wrapper">
+    <h1>Manufacture Process Details</h1>
+
+    <div class="details" *ngIf="companyListData">
+        <div class="content">
+            <h2>Title</h2>
+            <p>{{companyListData.title}}</p>
+            <hr>
+        </div>
+        <div class="content">
+            <h2>Description</h2>
+            <p>{{companyListData.description}}</p>
+            <hr>
+        </div>
+        <div class="content">
+            <h2>Manufacture Category Id</h2>
+            <p>{{companyListData.manufacture_category_id}}</p>
+            <hr>
+        </div>
+        <div class="content" *ngIf="companyListData.imageUrl">
+            <h2>Thummbnail</h2>
+            <img src="{{companyListData.imageUrl}}" alt=" Image">
+            <hr>
+        </div>
+        <div class="content" *ngIf="companyListData.filesData">
+            <h2> Report </h2>
+            <a 
+            [href]="'' + companyListData.filesData" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Click On Report View
+            </a>
+        </div>
+    </div>
+</div>

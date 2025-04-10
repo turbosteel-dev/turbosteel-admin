@@ -40,6 +40,30 @@ const routes: Routes = [
     loadChildren: () => import('./components/facilities/facilities.module').then(m => m.FacilitiesModule)
   },
   {
+    path: 'certification',
+    loadChildren: () => import('./components/certification/certification.module').then(m => m.CertificationModule)
+  },
+  {
+    path: 'product-feature',
+    loadChildren: () => import('./components/product-feature/product-feature.module').then(m => m.ProductFeatureModule)
+  },
+  {
+    path: 'turbosteel-advantage',
+    loadChildren: () => import('./components/tubosteel-advantage/tubosteel-advantage.module').then(m => m.TubosteelAdvantageModule)
+  },
+  {
+    path: 'manufacture-process',
+    loadChildren: () => import('./components/m-process/m-process.module').then(m => m.MProcessModule)
+  },
+  {
+    path: 'inhouse',
+    loadChildren: () => import('./components/in-house/in-house.module').then(m => m.InHouseModule)
+  },
+  {
+    path: 'cuttingedge',
+    loadChildren: () => import('./components/cutting-edge/cutting-edge.module').then(m => m.CuttingEdgeModule)
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule)
   },

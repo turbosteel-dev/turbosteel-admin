@@ -1,0 +1,59 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New Cutting Edge  Details</h1>
+    </div>
+    <form [formGroup]="aboutUsListForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div>
+            <editor formControlName="description_one" [apiKey]="apiKey" [init]="editorConfig"></editor>
+        </div>
+        <div>
+            <editor formControlName="description_two" [apiKey]="apiKey" [init]="editorConfig"></editor>
+        </div>
+        <div>
+            <editor formControlName="description_three" [apiKey]="apiKey" [init]="editorConfig"></editor>
+        </div>
+        <div class="image-upload-container">
+            <label for="imageInput" class="upload-label">
+                <mat-icon>cloud_upload</mat-icon>
+                <span>Upload imageUrl</span>
+            </label>
+            <input type="file" id="imageInput" formControlName="imageUrl" (change)="onFileChange($event, 'imageUrl')"
+                #fileInput hidden />
+        </div>
+        <img *ngIf="imageUrlPreview" [src]="imageUrlPreview" alt="Image Preview" style="max-width: 200px; margin-top: 10px;">
+        <br><br>
+        <div *ngIf="companyListData?.imageUrl">
+            <h1>imageUrl image</h1>
+            <img src="{{companyListData?.imageUrl}}" />
+        </div>
+
+
+
+
+        <div class="image-upload-container">
+            <label for="imageInputTwo" class="upload-label">
+                <mat-icon>cloud_upload</mat-icon>
+                <span>Upload imageUrl</span>
+            </label>
+            <input type="file" id="imageInputTwo" formControlName="imageTwoUrl" (change)="onFileChange($event, 'imageTwoUrl')"
+                #fileInput hidden />
+        </div>
+        <img *ngIf="imageUrlPreviewTwo" [src]="imageUrlPreviewTwo" alt="Image Preview" style="max-width: 200px; margin-top: 10px;">
+        <br><br>
+        <div *ngIf="companyListData?.imageTwoUrl">
+            <h1>imageUrl image</h1>
+            <img src="{{companyListData?.imageTwoUrl}}" />
+        </div>
+
+
+
+        <button class="customButton" mat-raised-button type="submit">Submit</button>
+    </form>
+
+</div>

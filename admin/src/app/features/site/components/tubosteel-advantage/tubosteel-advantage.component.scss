@@ -1,0 +1,44 @@
+.component-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 3% 2%;
+    border-radius: 30px;
+    background-color:#eaedf2 !important;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 0;
+}
+
+a {
+    margin-right: 1em;
+    padding: 12px 20px;
+    border-radius: 10px 10px 0 0;
+    border: 1.2px solid  #262B40;
+    text-decoration: none;
+    color: black;
+}
+
+ul li {
+    list-style: none;
+    margin: 18px 0px;
+}
+
+.active {
+    background-color: #262B40;
+    color: white !important;
+    /* Active link color */
+}
+
+ul li a {
+    color: black;
+    /* Default link color */
+}
+
+ul li a.active {
+    color: white !important;
+    /* Active link color */
+}
