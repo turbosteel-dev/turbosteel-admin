@@ -1,0 +1,64 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New Distributors</h1>
+    </div>
+    <form [formGroup]="aboutUsListForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="tel" formControlName="phone">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Taluk</mat-label>
+                <input matInput type="text" formControlName="taluk">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>District</mat-label>
+                <input matInput type="text" formControlName="district">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Pincode</mat-label>
+                <input matInput type="text" formControlName="pincode">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <input matInput type="text" formControlName="state">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input matInput type="text" formControlName="country">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput type="text" formControlName="address"></textarea>
+            </mat-form-field>
+        </div>
+        
+      
+        <button class="customButton" mat-raised-button type="submit">Submit</button>
+    </form>
+</div>

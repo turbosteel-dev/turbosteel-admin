@@ -1,0 +1,24 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New About Us</h1>
+    </div>
+    <form [formGroup]="aboutUsListForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Url</mat-label>
+                <input matInput type="text" formControlName="url">
+            </mat-form-field>
+        </div>
+        <div>
+            <editor formControlName="description" [apiKey]="apiKey" [init]="editorConfig"></editor>
+        </div>
+      
+        <button class="customButton" mat-raised-button type="submit">Submit</button>
+    </form>
+</div>

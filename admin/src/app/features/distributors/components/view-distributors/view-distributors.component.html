@@ -1,0 +1,33 @@
+<div class="component-wrapper">
+    <h1>View Distributors</h1>
+    <hr>
+    <div class="details" *ngIf="companyListData">
+        <div class="content">
+            <p><strong>Name:</strong> {{companyListData.name}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Phone Number:</strong> {{companyListData.phone}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Email:</strong> {{companyListData.email}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Taluk:</strong> {{companyListData.taluk}}</p>
+        </div>
+        <div class="content">
+            <p><strong>District:</strong> {{companyListData.district}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Pincode:</strong> {{companyListData.pincode}}</p>
+        </div>
+        <div class="content">
+            <p><strong>State:</strong> {{companyListData.state}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Country:</strong> {{companyListData.country}}</p>
+        </div>
+        <div class="content">
+            <p><strong>Address:</strong> {{companyListData.address}}</p>
+        </div>
+    </div>
+</div>

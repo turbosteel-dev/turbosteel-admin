@@ -16,6 +16,10 @@
     z-index: 1000;
   }
   
+  a{
+    color: #ffffff !important;
+  }
+
   .content {
     padding: 16px;
     height: 100% !important;
@@ -36,7 +40,7 @@
   
   .customLogout {
     background-color: #fff;
-    color: #000;
+    color: #FFFFFF;
 
   }
   
@@ -68,7 +72,7 @@
   }
   
   ::ng-deep .mat-mdc-list-base {
-    margin-top: 25% !important;
+    margin-top: 3% !important;
   }
   
   ::ng-deep .mat-drawer-inner-container {
@@ -83,10 +87,6 @@
     top: 3px;
   }
   
-  .active-link .icon-style {
-    filter: invert(1); 
-  }
-
 
   .logo_background{
     background-color: #fff;

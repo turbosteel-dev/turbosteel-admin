@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CsvService } from 'src/app/service/csv.service';
 import { HttpService } from 'src/app/service/http.service';
 
 
 @Component({
-  selector: 'app-vision-list',
-  templateUrl: './vision-list.component.html',
-  styleUrls: ['./vision-list.component.scss']
+  selector: 'app-individual-house-list',
+  templateUrl: './individual-house-list.component.html',
+  styleUrls: ['./individual-house-list.component.scss']
 })
-export class VisionListComponent {
-  banner: any[] = [];
-  bannerUrl = '/api/vision/visionList'
-  displayedColumns: string[] = ['title','action'];
+export class IndividualHouseListComponent {
+ banner: any[] = [];
+  bannerUrl = '/api/individualHouse/individualHouse'
+  displayedColumns: string[] = ['title','phone','email','action'];
   responseData:any;
 
-  constructor(private http: HttpService, private router: Router,  private activatedRoute: ActivatedRoute) {}
+  constructor(private http: HttpService, private csv: CsvService, private router: Router,  private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadBanner();
@@ -30,11 +31,6 @@ export class VisionListComponent {
     this.router.navigate(['view',id], {relativeTo: this.activatedRoute});
   }
 
-  onClickEdit(id:any): void {
-    this.router.navigate(['edit',id], {relativeTo: this.activatedRoute});
-  }
-
-
   onClickDelete(id:any){
     let url = this.bannerUrl + '/' + id;
     this.http.delete(url).subscribe(response=>{
@@ -44,7 +40,7 @@ export class VisionListComponent {
     })
   }
 
-  onClickAdd(){
-    this.router.navigate(['new'], {relativeTo: this.activatedRoute});
+  onClickDownload(){
+    this.csv.downloadCSV();
   }
 }

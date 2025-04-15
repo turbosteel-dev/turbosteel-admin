@@ -3,13 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
 
 
+
 @Component({
-  selector: 'app-view-faq',
-  templateUrl: './view-faq.component.html',
-  styleUrls: ['./view-faq.component.scss']
+  selector: 'app-view-price-tag-list',
+  templateUrl: './view-price-tag-list.component.html',
+  styleUrls: ['./view-price-tag-list.component.scss']
 })
-export class ViewFaqComponent {
-  recipeUrl = '/api/home/frequentlyQuestion';
+export class ViewPriceTagListComponent {
+ recipeUrl = '/api/priceTag/priceTag';
   recipeData: any;
   displayedColumns: string[] = ['title', 'description'];
 
@@ -29,4 +30,5 @@ export class ViewFaqComponent {
     })
   }
 }
+
 

@@ -2,15 +2,14 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
 
-
 @Component({
-  selector: 'app-vision-list',
-  templateUrl: './vision-list.component.html',
-  styleUrls: ['./vision-list.component.scss']
+  selector: 'app-price-tag-list',
+  templateUrl: './price-tag-list.component.html',
+  styleUrls: ['./price-tag-list.component.scss']
 })
-export class VisionListComponent {
-  banner: any[] = [];
-  bannerUrl = '/api/vision/visionList'
+export class PriceTagListComponent {
+ banner: any[] = [];
+  bannerUrl = '/api/priceTag/priceTag'
   displayedColumns: string[] = ['title','action'];
   responseData:any;
 

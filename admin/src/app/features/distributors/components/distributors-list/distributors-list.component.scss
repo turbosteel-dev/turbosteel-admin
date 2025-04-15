@@ -1,0 +1,65 @@
+.small-icon{
+    margin: 0 .25em;
+}
+h1 {
+    font-size: 22px;
+    font-family: 'poppins' !important;
+}
+.bottom{
+    margin-top: 5%;
+}
+table{
+    padding: 10px;
+}
+.last-column{
+    text-align: right;
+
+    mat-icon{
+        margin: 0 0.25em;
+    }
+
+    mat-icon:hover{
+        cursor: pointer;        
+    }
+}
+
+
+.upload-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 10px;
+  }
+
+  .actions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .button2{
+    margin-left: 20px;
+  }

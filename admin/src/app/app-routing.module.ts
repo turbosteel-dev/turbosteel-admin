@@ -10,6 +10,22 @@ const routes: Routes = [
     loadChildren: () => import('./features/site/site.module').then(m => m.SiteModule)
   },
   {
+    path: 'price-tag',
+    loadChildren: () => import('./features/price-tag/price-tag.module').then(m => m.PriceTagModule)
+  },
+  {
+    path: 'individual-house',
+    loadChildren: () => import('./features/indiviual-house/indiviual-house.module').then(m => m.IndiviualHouseModule)
+  },
+  {
+    path: 'distributors',
+    loadChildren: () => import('./features/distributors/distributors.module').then(m => m.DistributorsModule)
+  },
+  {
+    path: 'masons',
+    loadChildren: () => import('./features/masons/masons.module').then(m => m.MasonsModule)
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
