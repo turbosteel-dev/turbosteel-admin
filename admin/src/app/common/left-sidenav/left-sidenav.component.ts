@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpService } from 'src/app/service/http.service';
+
 
 @Component({
   selector: 'app-left-sidenav',
@@ -6,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./left-sidenav.component.scss']
 })
 export class LeftSidenavComponent {
+  dropdownVisible = false;
+  userId:any;
+  userUrl = '/api/admin'
+  userDetail:any;
+  userRole: string | null = null;
+
   menus = [
     {
       name: "Site",
@@ -26,6 +35,12 @@ export class LeftSidenavComponent {
       icons: 'assets/images/icons/Individual house.svg'
     },
     {
+      name: "Architect Registration",
+      path: "/architects",
+      permission: "architects",
+      icons: 'assets/images/icons/Individual house.svg'
+    },
+    {
       name: "Masons & Barbenders",
       path: "/masons",
       permission: "masons",
@@ -37,12 +52,7 @@ export class LeftSidenavComponent {
       permission: "distributors",
       icons: 'assets/images/icons/mANAGE DISTRIBUTORS.svg'
     },
-    {
-      name: "Manage Distributors",
-      path: "/manage-distributors",
-      permission: "manage-distributors",
-      icons: 'assets/images/icons/mANAGE DISTRIBUTORS.svg'
-    },
+
     {
       name: "Dealership",
       path: "/dealership",
@@ -50,4 +60,58 @@ export class LeftSidenavComponent {
       icons: 'assets/images/icons/DEALERSHIP.svg'
     }
   ];
+
+  
+  constructor(private router: Router, private http: HttpService) { 
+    this.userId = localStorage.getItem('userId')
+  }
+
+
+  ngOnInit(){
+    this.userRole = localStorage.getItem('userRole');
+    this.getUser();
+  }
+
+  getUser(){
+    let url = this.userUrl + '/' + this.userId;
+    this.http.get(url).subscribe(response =>{
+      this.userDetail = response;
+      console.log(this.userDetail)
+    })
+}
+
+  canAccessUserManagement(): boolean {
+    return this.userRole === 'superAdmin';
+  }
+
+
+  onClickRoutes(path: string) {
+    this.router.navigate([path]);
+  }
+
+  onClickLogout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    this.router.navigate(['/login']);
+  }
+
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    const targetElement = event.target as HTMLElement;
+    if (!targetElement.closest('.details') && !targetElement.closest('.dropdown')) {
+      this.dropdownVisible = false;
+    }
+  }
+
+
+  onClickProfile(){
+
+  }
+
 }

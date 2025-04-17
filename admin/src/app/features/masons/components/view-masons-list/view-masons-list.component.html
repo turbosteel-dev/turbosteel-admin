@@ -1,0 +1,33 @@
+<div class="component-wrapper">
+    <h1>View Masons List</h1>
+    <hr>
+    <div class="details" *ngIf="companyListData">
+        <div class="content"><p><strong>Name:</strong> {{ companyListData.name }}</p></div>
+        <div class="content"><p><strong>Phone Number:</strong> {{ companyListData.phone }}</p></div>
+        <div class="content"><p><strong>Profession:</strong> {{ companyListData.type }}</p></div>
+        <div class="content"><p><strong>Date of Birth:</strong> {{ companyListData.dob | date: 'shortDate' }}</p></div>
+        <div class="content"><p><strong>Email:</strong> {{ companyListData.email }}</p></div>
+        <div class="content"><p><strong>Anniversary Date:</strong> {{ companyListData.aniversaryDate | date: 'shortDate' }}</p></div>
+        <div class="content"><p><strong>Company Name:</strong> {{ companyListData.businessDetail?.name_of_employee }}</p></div>
+        <div class="content"><p><strong>House Number:</strong> {{ companyListData.houseNumber }}</p></div>
+        <div class="content"><p><strong>City:</strong> {{ companyListData.city }}</p></div>
+        <div class="content"><p><strong>State:</strong> {{ companyListData.state }}</p></div>
+        <div class="content"><p><strong>Pincode:</strong> {{ companyListData.pincode }}</p></div>
+        <div class="content"><p><strong>Remarks:</strong> {{ companyListData.remarks }}</p></div>
+
+    
+
+        <div class="content" *ngIf="companyListData.photograph">
+            <p><strong>Photograph:</strong></p>
+            <button (click)="downloadFile(companyListData.photograph)">Download Photograph</button>
+        </div>
+        <div class="content" *ngIf="companyListData.idProof">
+            <p><strong>ID Proof:</strong></p>
+            <button (click)="downloadFile(companyListData.idProof)">Download ID Proof</button>
+        </div>
+        <div class="content" *ngIf="companyListData.addressProof">
+            <p><strong>Address Proof:</strong></p>
+            <button (click)="downloadFile(companyListData.addressProof)">Download Address Proof</button>
+        </div>
+    </div>
+</div>

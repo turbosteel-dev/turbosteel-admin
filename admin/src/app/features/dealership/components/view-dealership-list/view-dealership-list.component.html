@@ -1,0 +1,108 @@
+<div class="component-wrapper">
+    <h1>View Dealership Details</h1>
+    <hr>
+    <div class="details" *ngIf="companyListData">
+        <!-- Main Company Info -->
+        <div class="content"><p><strong>Company Name:</strong> {{ companyListData.companyName }}</p></div>
+        <div class="content"><p><strong>Office Address:</strong> {{ companyListData.officeAddress }}</p></div>
+        <div class="content"><p><strong>City:</strong> {{ companyListData.city }}</p></div>
+        <div class="content"><p><strong>State:</strong> {{ companyListData.state }}</p></div>
+        <div class="content"><p><strong>Pincode:</strong> {{ companyListData.pincode }}</p></div>
+        <div class="content"><p><strong>Phone:</strong> {{ companyListData.phone }}</p></div>
+        <div class="content"><p><strong>Email:</strong> {{ companyListData.email }}</p></div>
+        <div class="content"><p><strong>GST Number:</strong> {{ companyListData.gstNumber }}</p></div>
+        <div class="content"><p><strong>PAN Number:</strong> {{ companyListData.panNumber }}</p></div>
+        <div class="content"><p><strong>Type of Firm:</strong> {{ companyListData.typeOfFirm }}</p></div>
+
+        <!-- First Owner Information -->
+        <div class="contents" *ngIf="companyListData.firstOwnerInformation">
+            <h3>First Owner Details</h3>
+            <p><strong>Name:</strong> {{ companyListData.firstOwnerInformation.name }}</p>
+            <p><strong>Phone:</strong> {{ companyListData.firstOwnerInformation.phone }}</p>
+            <p><strong>Email:</strong> {{ companyListData.firstOwnerInformation.email }}</p>
+            <p><strong>Place:</strong> {{ companyListData.firstOwnerInformation.place }}</p>
+            <p><strong>House Number:</strong> {{ companyListData.firstOwnerInformation.houseNumber }}</p>
+            <p><strong>City:</strong> {{ companyListData.firstOwnerInformation.city }}</p>
+            <p><strong>State:</strong> {{ companyListData.firstOwnerInformation.state }}</p>
+            <p><strong>Pincode:</strong> {{ companyListData.firstOwnerInformation.pincode }}</p>
+        </div>
+
+
+        <div class="contents" *ngIf="companyListData.secondOwnerInformation">
+            <h3>Second Owner Details</h3>
+            <p><strong>Name:</strong> {{ companyListData.secondOwnerInformation.name }}</p>
+            <p><strong>Phone:</strong> {{ companyListData.secondOwnerInformation.phone }}</p>
+            <p><strong>Email:</strong> {{ companyListData.secondOwnerInformation.email }}</p>
+            <p><strong>Place:</strong> {{ companyListData.secondOwnerInformation.place }}</p>
+            <p><strong>House Number:</strong> {{ companyListData.secondOwnerInformation.houseNumber }}</p>
+            <p><strong>City:</strong> {{ companyListData.secondOwnerInformation.city }}</p>
+            <p><strong>State:</strong> {{ companyListData.secondOwnerInformation.state }}</p>
+            <p><strong>Pincode:</strong> {{ companyListData.secondOwnerInformation.pincode }}</p>
+        </div>
+
+        <!-- First Owner Greeting Info -->
+        <div class="contents" *ngIf="companyListData.firstOwnerGreetingInformation">
+            <h3>First Owner Greetings</h3>
+            <p><strong>Spouse Name:</strong> {{ companyListData.firstOwnerGreetingInformation.spouseName }}</p>
+            <p><strong>Spouse DOB:</strong> {{ companyListData.firstOwnerGreetingInformation.spouseDob | date: 'shortDate' }}</p>
+            <p><strong>Anniversary Date:</strong> {{ companyListData.firstOwnerGreetingInformation.aniversaryDate | date: 'shortDate' }}</p>
+            <p><strong>Child 1 Name:</strong> {{ companyListData.firstOwnerGreetingInformation.childOneName }}</p>
+            <p><strong>Child 1 DOB:</strong> {{ companyListData.firstOwnerGreetingInformation.childOneDob | date: 'shortDate' }}</p>
+            <p><strong>Child 2 Name:</strong> {{ companyListData.firstOwnerGreetingInformation.ChildTwoname }}</p>
+            <p><strong>Child 2 DOB:</strong> {{ companyListData.firstOwnerGreetingInformation.ChildTwoDob | date: 'shortDate' }}</p>
+            <p><strong>Child 3 Name:</strong> {{ companyListData.firstOwnerGreetingInformation.ChildThreename }}</p>
+            <p><strong>Child 3 DOB:</strong> {{ companyListData.firstOwnerGreetingInformation.ChildThreeDob | date: 'shortDate' }}</p>
+        </div>
+
+
+
+        <div class="contents" *ngIf="companyListData.secondOwnerGreetingInformation">
+            <h3>Second Owner Greetings</h3>
+            <p><strong>Spouse Name:</strong> {{ companyListData.secondOwnerGreetingInformation.spouseName }}</p>
+            <p><strong>Spouse DOB:</strong> {{ companyListData.secondOwnerGreetingInformation.spouseDob | date: 'shortDate' }}</p>
+            <p><strong>Anniversary Date:</strong> {{ companyListData.secondOwnerGreetingInformation.aniversaryDate | date: 'shortDate' }}</p>
+            <p><strong>Child 1 Name:</strong> {{ companyListData.secondOwnerGreetingInformation.childOneName }}</p>
+            <p><strong>Child 1 DOB:</strong> {{ companyListData.secondOwnerGreetingInformation.childOneDob | date: 'shortDate' }}</p>
+            <p><strong>Child 2 Name:</strong> {{ companyListData.secondOwnerGreetingInformation.ChildTwoname }}</p>
+            <p><strong>Child 2 DOB:</strong> {{ companyListData.secondOwnerGreetingInformation.ChildTwoDob | date: 'shortDate' }}</p>
+            <p><strong>Child 3 Name:</strong> {{ companyListData.secondOwnerGreetingInformation.ChildThreename }}</p>
+            <p><strong>Child 3 DOB:</strong> {{ companyListData.secondOwnerGreetingInformation.ChildThreeDob | date: 'shortDate' }}</p>
+        </div>
+
+        <!-- Banking Information -->
+        <div class="contents" *ngIf="companyListData.bankingInformation">
+            <h3>Banking Information</h3>
+            <p><strong>Bank Name:</strong> {{ companyListData.bankingInformation.bankName }}</p>
+            <p><strong>Branch:</strong> {{ companyListData.bankingInformation.branch }}</p>
+            <p><strong>IFSC:</strong> {{ companyListData.bankingInformation.ifsc }}</p>
+            <p><strong>Account Number:</strong> {{ companyListData.bankingInformation.account_number }}</p>
+        </div>
+
+        <!-- Depot Info -->
+        <div class="contents" *ngIf="companyListData.depotInformation">
+            <h3>Depot Information</h3>
+            <p><strong>Depot Address:</strong> {{ companyListData.depotInformation.depot_address }}</p>
+            <p><strong>City:</strong> {{ companyListData.depotInformation.city }}</p>
+            <p><strong>State:</strong> {{ companyListData.depotInformation.state }}</p>
+            <p><strong>Zip:</strong> {{ companyListData.depotInformation.zip }}</p>
+        </div>
+
+        <!-- File Downloads -->
+        <div class="content" *ngIf="companyListData.photograph">
+            <p><strong>Photograph:</strong></p>
+            <button (click)="downloadFile(companyListData.photograph)">Download Photograph</button>
+        </div>
+        <div class="content" *ngIf="companyListData.gstCertificate">
+            <p><strong>GST Certificate:</strong></p>
+            <button (click)="downloadFile(companyListData.gstCertificate)">Download GST Certificate</button>
+        </div>
+        <div class="content" *ngIf="companyListData.panCard">
+            <p><strong>PAN Card:</strong></p>
+            <button (click)="downloadFile(companyListData.panCard)">Download PAN Card</button>
+        </div>
+        <div class="content" *ngIf="companyListData.shopPhoto">
+            <p><strong>Shop Photo:</strong></p>
+            <button (click)="downloadFile(companyListData.shopPhoto)">Download Shop Photo</button>
+        </div>
+    </div>
+</div>

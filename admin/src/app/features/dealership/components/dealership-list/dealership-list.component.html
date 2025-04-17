@@ -1,0 +1,42 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>DealerShip Lists</h1>
+        <div class="actions">
+            <button class="customButton" mat-raised-button (click)="onClickDownload()">Download Csv</button>
+        </div>
+    </div>
+    <div class="bottom">
+        <table mat-table [dataSource]="banner">
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef> Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef> Phone </th>
+                <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell class="last-column" *matCellDef="let element">
+                    <mat-icon class="small-icon" (click)="onClickView(element._id)">visibility</mat-icon>
+                    <mat-icon class="small-icon"  (click)="onClickDelete(element._id)">delete</mat-icon>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

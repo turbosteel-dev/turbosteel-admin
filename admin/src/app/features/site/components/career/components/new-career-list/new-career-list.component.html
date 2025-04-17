@@ -1,0 +1,29 @@
+<div class="component-wrapper">
+    <div class="top">
+        <h1>New Career List</h1>
+    </div>
+    <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Sub Description</mat-label>
+                <input matInput type="text" formControlName="sub_description">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Url</mat-label>
+                <input matInput type="text" formControlName="url">
+            </mat-form-field>
+        </div>
+        <div>
+            <editor formControlName="description" [apiKey]="apiKey" [init]="editorConfig"></editor>
+        </div>
+        <button class="customButton" type="submit" mat-raised-button>Submit</button>
+    </form>
+</div>

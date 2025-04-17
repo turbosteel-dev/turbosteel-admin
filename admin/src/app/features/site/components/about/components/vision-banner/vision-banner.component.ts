@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/service/http.service';
   styleUrls: ['./vision-banner.component.scss']
 })
 export class VisionBannerComponent {
-banner: any[] = [];
+  banner: any[] = [];
   bannerUrl = '/api/vision/visionBanner'
   displayedColumns: string[] = ['title','action'];
   responseData:any;

@@ -1,93 +1,176 @@
 .component-wrapper {
-    background-color: rgba(238, 255, 254, 1);
-  }
-  
-  .sidenav-container {
-    height: 100vh;
-  }
-  
-  .sidenav {
-    width: 300px;
-  }
-  
-  .mat-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  a{
-    color: #ffffff !important;
-  }
+  background-color: rgba(238, 255, 254, 1);
+}
 
-  .content {
-    padding: 16px;
-    height: 100% !important;
-  }
-  
-  .custom-color {
-    background: linear-gradient(rgba(6, 92, 88, 1), rgba(9, 100, 96, 1), rgba(2, 84, 80, 1), rgba(2, 84, 80, 1), rgba(2, 106, 100, 1));
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .customLogout {
-    background-color: #fff;
-    color: #FFFFFF;
+.sidenav-container {
+  height: 100vh;
+}
 
-  }
-  
-  .active-link {
-    background: #2e3650 !important;
-    color: #fff !important;
-    font-weight: bold;
-    border-radius: 4px;
-  }
-  
-  a.active-link {
-    color: white !important;
-  }
-  
-  
-  img.logo {
-    height: 120px !important;
-  }
-  
-  ::ng-deep .mdc-list-item__primary-text {
-    color: inherit !important;
-  }
-  
-  ::ng-deep .mat-toolbar-row,
-  .mat-toolbar-single-row {
-    height: auto;
-    background-color: #fff;
-    padding: 30px 20px;
-  }
-  
-  ::ng-deep .mat-mdc-list-base {
-    margin-top: 3% !important;
-  }
-  
-  ::ng-deep .mat-drawer-inner-container {
-    background-color: #262B40;
-  }
-  
-  
-  .icon-style {
-    filter: invert(0);
-    transition: filter 0.3s ease;
-    position: relative;
-    top: 3px;
-  }
-  
+.sidenav {
+  width: 300px;
+}
 
-  .logo_background{
-    background-color: #fff;
-  }
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+a {
+  color: #ffffff !important;
+}
+
+.content {
+  padding: 16px;
+  height: 100% !important;
+}
+
+.custom-color {
+  background: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px !important;
+  height: 70px !important;
+  margin: 0 !important
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customLogout {
+  background-color: #fff;
+  color: #FFFFFF;
+
+}
+
+.active-link {
+  background: #2e3650 !important;
+  color: #fff !important;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+a.active-link {
+  color: white !important;
+}
+
+
+img.logo {
+  height: 120px !important;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: inherit !important;
+}
+
+::ng-deep .mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: auto;
+  background-color: #fff;
+  padding: 30px 20px;
+}
+
+::ng-deep .mat-mdc-list-base {
+  margin-top: 3% !important;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  background-color: #262B40;
+}
+
+
+.icon-style {
+  filter: invert(0);
+  transition: filter 0.3s ease;
+  position: relative;
+  top: 3px;
+}
+
+
+.logo_background {
+  background-color: #fff;
+}
+
+
+.nav-lists {
+  display: flex;
+  width: 100%;
+  margin-top: 0px;
+}
+
+
+.nav-lists img {
+  margin-left: 20px;
+}
+
+.user_logo{
+  height: 50px;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 68px;
+  right: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown h3 {
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column !important;
+  cursor: pointer;
+}
+
+.dropdown ul li {
+  padding: 7px 0;
+}
+
+.dropdown ul li a {
+  text-decoration: none;
+  color: #66799e !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+
+.dropdown ul li img {
+  height: 22px;
+  margin: 5px 0;
+}
+
+.dropdown ul li {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.dropdown ul li:hover a {
+  color: var(--gpc-primary-font-color);
+}

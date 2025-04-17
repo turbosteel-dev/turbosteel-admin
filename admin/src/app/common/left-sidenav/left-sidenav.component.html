@@ -10,20 +10,35 @@
 
       <mat-nav-list>
         <div *ngFor="let data of menus">
-          <div class="nav-lists">
-            <a mat-list-item [routerLink]="data.path" routerLinkActive="active-link">
-              <img [src]="data.icons" class="icon-style">&nbsp;{{ data.name }}
+          <div *ngIf="data.name !== 'User Management' || canAccessUserManagement()" class="nav-lists">
+            <img [src]="data.icons" alt="{{ data.name }}" />
+            <a class="active-nav-list" mat-list-item [routerLink]="data.path"
+                routerLinkActive="active-link">
+                {{ data.name }}
             </a>
-          </div>
+        </div>
         </div>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
+      <mat-toolbar class="custom-color">
+          <div class="right-side">
+              <div class="details" (click)="toggleDropdown()">
+                  <img class="user_logo" src="assets/images/663328.png" alt="company logo">
+              </div>
+              <div class="dropdown" [ngClass]="{ active: dropdownVisible }">
+                <ul>
+                    <li><img class="user_logo" src="assets/images/663328.png" alt="company logo"><a (click)="onClickProfile()">Profile</a></li>
+                    <li (click)="onClickLogout()"><img class="user_logo" src="assets/images/663328.png" alt="company logo"><a>Logout</a></li>
+                </ul>
+            </div>
+          </div>
+      </mat-toolbar>
       <div class="content">
-        <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
       </div>
-    </mat-sidenav-content>
+  </mat-sidenav-content>
 
   </mat-sidenav-container>
 </div>

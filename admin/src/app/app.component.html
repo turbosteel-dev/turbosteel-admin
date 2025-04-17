@@ -1,4 +1,4 @@
 <div>
-  <app-left-sidenav></app-left-sidenav>
-  <router-outlet></router-outlet>
+  <app-left-sidenav *ngIf="sidenav"></app-left-sidenav>
+  <router-outlet  *ngIf="data"></router-outlet>
 </div>

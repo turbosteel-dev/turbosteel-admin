@@ -1,0 +1,27 @@
+<div class="component-wrapper">
+    <section class="top">
+        <h1>Turbosteel Header</h1>
+        <div class="actions">
+            <button class="customButton" mat-raised-button (click)="onClickAdd()">Add new Turbosteel Header</button>
+        </div>
+    </section>
+    <section class="bottom">
+        <table mat-table [dataSource]="corporateData">
+
+            <ng-container matColumnDef="banner_title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell class="last-column" *matCellDef="let element">
+                    <mat-icon class="small-icon" (click)="onClickView(element._id)">visibility</mat-icon>
+                    <mat-icon class="small-icon" (click)="onClickEdit(element._id)">edit</mat-icon>
+                    <mat-icon class="small-icon" (click)="onClickDelete(element._id)">delete</mat-icon>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </section>
+</div>

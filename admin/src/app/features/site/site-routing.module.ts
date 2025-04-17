@@ -64,6 +64,18 @@ const routes: Routes = [
     loadChildren: () => import('./components/cutting-edge/cutting-edge.module').then(m => m.CuttingEdgeModule)
   },
   {
+    path: 'forms',
+    loadChildren: () => import('./components/forms-banner/forms-banner.module').then(m => m.FormsBannerModule)
+  },
+  {
+    path: 'career',
+    loadChildren: () => import('./components/career/career.module').then(m => m.CareerModule)
+  },
+  {
+    path: 'header',
+    loadChildren: () => import('./components/header/header.module').then(m => m.HeaderModule)
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule)
   },
