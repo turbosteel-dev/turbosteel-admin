@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseUrl = 'http://localhost:3000';
+  baseUrl = 'https://turbo-steel-api-nkapt.ondigitalocean.app';
 
   get(url: string) {
     let userId = localStorage.getItem('token');

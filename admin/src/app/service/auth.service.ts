@@ -10,7 +10,7 @@ export class AuthService {
   isLoggedIn$ = new BehaviorSubject<boolean>(false);
 
   
-  baseUrl = 'http://localhost:3000';
+  baseUrl = 'https://turbo-steel-api-nkapt.ondigitalocean.app';
   constructor(private http: HttpClient) {}
 
   isLoggedIn() {

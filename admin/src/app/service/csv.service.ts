@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CsvService {
 
-  private baseUrl = 'http://localhost:3000';  
+  private baseUrl = 'https://turbo-steel-api-nkapt.ondigitalocean.app';  
 
   constructor(private http: HttpClient) {}
 
