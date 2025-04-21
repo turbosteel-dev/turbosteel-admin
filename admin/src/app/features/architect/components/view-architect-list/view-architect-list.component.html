@@ -38,15 +38,18 @@
         <div class="content">
             <p><strong>Remarks:</strong> {{ companyListData.remarks }}</p>
         </div>
-        <div class="content" *ngIf="companyListData.salesOfficer">
-            <p><strong>Sales Officer Name:</strong> {{ companyListData.salesOfficer.name_of_sales }}</p>
-            <p><strong>Sales Officer Place:</strong> {{ companyListData.salesOfficer.place }}</p>
+        <div class="content">
+            <p><strong>Sales Officer Name:</strong> {{ companyListData.name_of_sales }}</p>
         </div>
-        <div class="content" *ngIf="companyListData.dealer">
-            <p><strong>Dealer Name:</strong> {{ companyListData.dealer.name_of_dealer }}</p>
-            <p><strong>Dealer Place:</strong> {{ companyListData.dealer.place }}</p>
+        <div class="content">
+            <p><strong>Sales Officer Place:</strong> {{ companyListData.sales_place }}</p>
         </div>
-
+        <div class="content">
+            <p><strong>Dealer Officer Name:</strong> {{ companyListData.name_of_dealer }}</p>
+        </div>
+        <div class="content">
+            <p><strong>Dealer Place:</strong> {{ companyListData.dealer_place }}</p>
+        </div>
         <!-- Image Downloads -->
         <div class="content" *ngIf="companyListData.photograph">
             <p><strong>Photograph:</strong></p>

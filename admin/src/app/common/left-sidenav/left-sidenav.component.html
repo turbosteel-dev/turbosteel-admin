@@ -29,7 +29,7 @@
               </div>
               <div class="dropdown" [ngClass]="{ active: dropdownVisible }">
                 <ul>
-                    <li><img class="user_logo" src="assets/images/663328.png" alt="company logo"><a (click)="onClickProfile()">Profile</a></li>
+                    <li><img class="user_logo" src="assets/images/663328.png" alt="company logo"><a (click)="onClickProfile()">{{userDetail.email}}</a></li>
                     <li (click)="onClickLogout()"><img class="user_logo" src="assets/images/663328.png" alt="company logo"><a>Logout</a></li>
                 </ul>
             </div>

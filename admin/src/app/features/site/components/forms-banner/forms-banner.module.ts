@@ -15,6 +15,9 @@ import { ViewMasonsComponent } from './components/view-masons/view-masons.compon
 import { IndiviualFormBannerComponent } from './components/indiviual-form-banner/indiviual-form-banner.component';
 import { NewIndiviualFormBannerComponent } from './components/new-indiviual-form-banner/new-indiviual-form-banner.component';
 import { ViewIndiviualFormBannerComponent } from './components/view-indiviual-form-banner/view-indiviual-form-banner.component';
+import { BuyFormComponent } from './components/buy-form/buy-form.component';
+import { NewBuyFormComponent } from './components/new-buy-form/new-buy-form.component';
+import { ViewBuyFormComponent } from './components/view-buy-form/view-buy-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { ViewIndiviualFormBannerComponent } from './components/view-indiviual-fo
     IndiviualFormBannerComponent,
     NewIndiviualFormBannerComponent,
     ViewIndiviualFormBannerComponent,
+    BuyFormComponent,
+    NewBuyFormComponent,
+    ViewBuyFormComponent,
   ],
   imports: [
     CommonModule,

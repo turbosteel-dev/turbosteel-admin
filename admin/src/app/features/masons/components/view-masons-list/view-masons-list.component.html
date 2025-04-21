@@ -7,15 +7,18 @@
         <div class="content"><p><strong>Profession:</strong> {{ companyListData.type }}</p></div>
         <div class="content"><p><strong>Date of Birth:</strong> {{ companyListData.dob | date: 'shortDate' }}</p></div>
         <div class="content"><p><strong>Email:</strong> {{ companyListData.email }}</p></div>
-        <div class="content"><p><strong>Anniversary Date:</strong> {{ companyListData.aniversaryDate | date: 'shortDate' }}</p></div>
-        <div class="content"><p><strong>Company Name:</strong> {{ companyListData.businessDetail?.name_of_employee }}</p></div>
         <div class="content"><p><strong>House Number:</strong> {{ companyListData.houseNumber }}</p></div>
         <div class="content"><p><strong>City:</strong> {{ companyListData.city }}</p></div>
         <div class="content"><p><strong>State:</strong> {{ companyListData.state }}</p></div>
         <div class="content"><p><strong>Pincode:</strong> {{ companyListData.pincode }}</p></div>
-        <div class="content"><p><strong>Remarks:</strong> {{ companyListData.remarks }}</p></div>
-
-    
+        <div class="content"><p><strong>Anniversary Date:</strong> {{ companyListData.aniversaryDate | date: 'shortDate' }}</p></div>
+        <div class="content"><p><strong>Name of Employee:</strong> {{ companyListData.name_of_employee }}</p></div>
+        <div class="content"><p><strong>Name of Project:</strong> {{ companyListData.name_of_projects }}</p></div>
+        <div class="content"><p><strong>Dealer Associate:</strong> {{ companyListData.dealer_associate }}</p></div>
+        <div class="content"><p><strong>Operation Area:</strong> {{ companyListData.operation_area }}</p></div>
+        <div class="content"><p><strong>Name of Officer:</strong> {{ companyListData.name_of_officer }}</p></div>
+        <div class="content"><p><strong>Place:</strong> {{ companyListData.place }}</p></div>
+        
 
         <div class="content" *ngIf="companyListData.photograph">
             <p><strong>Photograph:</strong></p>
